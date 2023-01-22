@@ -1,0 +1,26 @@
+def bitwise_operations(str1, str2):
+    # Initialize variables to store the results
+    and_result, or_result, xor_result = 0, 0, 0
+    
+    # Iterate over the characters in the strings
+    for i in range(len(str1)):
+        # Get the current character from each string
+        char1, char2 = str1[i], str2[i]
+        
+        # Perform bitwise AND, OR, and XOR
+        and_result += (int(char1) & int(char2)) << i
+        or_result += (int(char1) | int(char2)) << i
+        xor_result += (int(char1) ^ int(char2)) << i
+    
+    # Convert the results to bit strings
+    str_and_result = bin(and_result)[2:]
+    str_or_result = bin(or_result)[2:]
+    str_xor_result = bin(xor_result)[2:]
+    
+    # Print the results
+    print("Bitwise AND: ", str_and_result)
+    print("Bitwise OR: ", str_or_result)
+    print("Bitwise XOR: ", str_xor_result)
+
+# Example usage
+bitwise_operations("10101", "01011")
