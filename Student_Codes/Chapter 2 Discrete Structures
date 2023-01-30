@@ -1,0 +1,25 @@
+import random
+
+def get_sequence(seq_num):
+    if seq_num == 1:
+        return [1, 2, 3, 4, 5]
+    elif seq_num == 2:
+        return [2, 4, 6, 8, 10]
+    elif seq_num == 3:
+        return [10, 9, 8, 7, 6]
+    else:
+        return [5, 10, 15, 20, 25]
+
+def main():
+    seq_num = random.randint(1, 4)
+    seq = get_sequence(seq_num)
+    print("The first five terms of the sequence are:", seq)
+    sixth_term = seq[-1] + (seq[1] - seq[0])
+    answer = int(input("What do you think the sixth term is? "))
+    if answer == sixth_term:
+        print("Correct!")
+    else:
+        print("Incorrect. The sixth term is", sixth_term)
+
+if __name__ == "__main__":
+    main()
