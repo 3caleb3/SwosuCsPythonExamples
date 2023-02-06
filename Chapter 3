@@ -1,0 +1,19 @@
+def cashier_algorithm(price, payment):
+    change = payment - price
+    notes_and_coins = [100, 50, 20, 10, 5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
+    result = {}
+    for i in notes_and_coins:
+        if change >= i:
+            count = change // i
+            change = round(change - count * i, 2)
+            result[i] = count
+    return result
+
+price = float(input("Enter the price of the item: "))
+payment = float(input("Enter the payment: "))
+
+if payment < price:
+    print("Payment amount is less than the price.")
+else:
+    change = cashier_algorithm(price, payment)
+    print("Change:", change)
