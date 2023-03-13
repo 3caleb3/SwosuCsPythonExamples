@@ -1,0 +1,14 @@
+import math
+
+def shared_birthdays_probability(probability):
+    n = 1
+    p = 1
+    while p > (1 - probability):
+        p *= (365 - n + 1) / 365
+        n += 1
+    return n - 1
+print(shared_birthdays_probability(0.7))  # 24
+print(shared_birthdays_probability(0.8))  # 29
+print(shared_birthdays_probability(0.9))  # 38
+print(shared_birthdays_probability(0.95)) # 47
+print(shared_birthdays_probability(0.99)) # 67
